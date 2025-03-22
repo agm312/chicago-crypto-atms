@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto ATMs in Wicker Park</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #E84E3C;
+            --text-color: #333;
+            --border-color: #e5e7eb;
+            --background-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/chicago-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-button {
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 2rem;
+            background: var(--background-gray);
+            overflow-x: auto;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* ATM Grid */
+        .atm-grid {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .atm-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .atm-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .atm-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .atm-details {
+            padding: 1rem;
+        }
+
+        .atm-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .atm-type {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating {
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+        }
+
+        .atm-address {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .atm-phone {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .visit-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Chicago Crypto ATMs</a>
+            <div class="nav-links">
+                <a href="/neighborhoods">Neighborhoods</a>
+                <a href="/cryptocurrencies">Cryptocurrencies</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Find Crypto ATMs in Chicago</h1>
+        <p>Discover top-rated cryptocurrency ATMs near you</p>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" name="q" class="search-input" placeholder="Enter location or cryptocurrency (e.g., XRP)...">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="categories">
+        
+            <a href="/neighborhood/loop" class="category-tag">The Loop</a>
+        
+            <a href="/neighborhood/river-north" class="category-tag">River North</a>
+        
+            <a href="/neighborhood/lincoln-park" class="category-tag">Lincoln Park</a>
+        
+            <a href="/neighborhood/wicker-park" class="category-tag">Wicker Park</a>
+        
+            <a href="/neighborhood/logan-square" class="category-tag">Logan Square</a>
+        
+            <a href="/neighborhood/west-loop" class="category-tag">West Loop</a>
+        
+            <a href="/neighborhood/south-loop" class="category-tag">South Loop</a>
+        
+            <a href="/neighborhood/gold-coast" class="category-tag">Gold Coast</a>
+        
+            <a href="/neighborhood/lakeview" class="category-tag">Lakeview</a>
+        
+            <a href="/neighborhood/uptown" class="category-tag">Uptown</a>
+        
+    </section>
+
+    <main class="atm-grid">
+        
+        <article class="atm-card">
+            <img src="/images/locations/default.jpg" alt="RockItCoin ATM" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">RockItCoin ATM</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(92)</span>
+                </div>
+                <p class="atm-address">741 N Western Ave, Chicago, IL 60622</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+    </main>
+</body>
+</html> 

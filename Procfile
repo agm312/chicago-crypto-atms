@@ -1,0 +1,1 @@
+web: python process_data.py && python server.py 

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supported Cryptocurrencies - Crypto ATMs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #E84E3C;
+            --text-color: #333;
+            --border-color: #e5e7eb;
+            --background-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.5;
+            background-color: var(--background-gray);
+        }
+
+        header {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .crypto-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            padding: 1.5rem;
+        }
+
+        .crypto-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .crypto-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .crypto-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .crypto-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .crypto-symbol {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .atm-count {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .view-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Chicago Crypto ATMs</a>
+            <div class="nav-links">
+                <a href="/neighborhoods">Neighborhoods</a>
+                <a href="/cryptocurrencies">Cryptocurrencies</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Supported Cryptocurrencies</h1>
+        <div class="crypto-grid">
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/btc.svg" alt="Bitcoin" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Bitcoin</h2>
+                        <span class="crypto-symbol">BTC</span>
+                    </div>
+                </div>
+                <p class="atm-count">22 ATMs support BTC</p>
+                <a href="/cryptocurrency/btc" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/eth.svg" alt="Ethereum" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Ethereum</h2>
+                        <span class="crypto-symbol">ETH</span>
+                    </div>
+                </div>
+                <p class="atm-count">18 ATMs support ETH</p>
+                <a href="/cryptocurrency/eth" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/usdt.svg" alt="Tether" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Tether</h2>
+                        <span class="crypto-symbol">USDT</span>
+                    </div>
+                </div>
+                <p class="atm-count">6 ATMs support USDT</p>
+                <a href="/cryptocurrency/usdt" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/usdc.svg" alt="USD Coin" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">USD Coin</h2>
+                        <span class="crypto-symbol">USDC</span>
+                    </div>
+                </div>
+                <p class="atm-count">8 ATMs support USDC</p>
+                <a href="/cryptocurrency/usdc" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/xrp.svg" alt="XRP" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">XRP</h2>
+                        <span class="crypto-symbol">XRP</span>
+                    </div>
+                </div>
+                <p class="atm-count">12 ATMs support XRP</p>
+                <a href="/cryptocurrency/xrp" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/doge.svg" alt="Dogecoin" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Dogecoin</h2>
+                        <span class="crypto-symbol">DOGE</span>
+                    </div>
+                </div>
+                <p class="atm-count">8 ATMs support DOGE</p>
+                <a href="/cryptocurrency/doge" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/ltc.svg" alt="Litecoin" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Litecoin</h2>
+                        <span class="crypto-symbol">LTC</span>
+                    </div>
+                </div>
+                <p class="atm-count">15 ATMs support LTC</p>
+                <a href="/cryptocurrency/ltc" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/bch.svg" alt="Bitcoin Cash" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Bitcoin Cash</h2>
+                        <span class="crypto-symbol">BCH</span>
+                    </div>
+                </div>
+                <p class="atm-count">3 ATMs support BCH</p>
+                <a href="/cryptocurrency/bch" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/dai.svg" alt="Dai" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Dai</h2>
+                        <span class="crypto-symbol">DAI</span>
+                    </div>
+                </div>
+                <p class="atm-count">4 ATMs support DAI</p>
+                <a href="/cryptocurrency/dai" class="view-button">View ATMs</a>
+            </div>
+            
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/shib.svg" alt="Shiba Inu" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">Shiba Inu</h2>
+                        <span class="crypto-symbol">SHIB</span>
+                    </div>
+                </div>
+                <p class="atm-count">3 ATMs support SHIB</p>
+                <a href="/cryptocurrency/shib" class="view-button">View ATMs</a>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html> 

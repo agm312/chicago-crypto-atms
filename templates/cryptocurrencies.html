@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supported Cryptocurrencies - Crypto ATMs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #E84E3C;
+            --text-color: #333;
+            --border-color: #e5e7eb;
+            --background-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.5;
+            background-color: var(--background-gray);
+        }
+
+        header {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .crypto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .crypto-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            padding: 1.5rem;
+        }
+
+        .crypto-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .crypto-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .crypto-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .crypto-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .crypto-symbol {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .atm-count {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .view-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Chicago Crypto ATMs</a>
+            <div class="nav-links">
+                <a href="/neighborhoods">Neighborhoods</a>
+                <a href="/cryptocurrencies">Cryptocurrencies</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Supported Cryptocurrencies</h1>
+        <div class="crypto-grid">
+            {% for crypto in cryptocurrencies %}
+            <div class="crypto-card">
+                <div class="crypto-header">
+                    <img src="/static/images/crypto-icons/{{ crypto.symbol|lower }}.svg" alt="{{ crypto.name }}" class="crypto-icon">
+                    <div>
+                        <h2 class="crypto-name">{{ crypto.name }}</h2>
+                        <span class="crypto-symbol">{{ crypto.symbol }}</span>
+                    </div>
+                </div>
+                <p class="atm-count">{{ crypto.atm_count }} ATMs support {{ crypto.symbol }}</p>
+                <a href="/cryptocurrency/{{ crypto.symbol|lower }}" class="view-button">View ATMs</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html> 

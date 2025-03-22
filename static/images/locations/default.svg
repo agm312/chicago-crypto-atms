@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" version="1.1" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="400" fill="#f5f5f5"/>
+    <g fill="#999">
+        <path d="M400 160 c-20 0 -36 16 -36 36v48c0 20 16 36 36 36s36-16 36-36v-48c0-20-16-36-36-36zm24 84c0 13.2-10.8 24-24 24s-24-10.8-24-24v-48c0-13.2 10.8-24 24-24s24 10.8 24 24v48z"/>
+        <path d="M400 196c-6.6 0-12 5.4-12 12v24c0 6.6 5.4 12 12 12s12-5.4 12-12v-24c0-6.6-5.4-12-12-12z"/>
+    </g>
+    <text x="400" y="280" text-anchor="middle" fill="#666" font-family="sans-serif" font-size="24">ATM Location Image</text>
+</svg> 

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Chicago Crypto ATMs</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --accent-color: #e74c3c;
+            --background-color: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--background-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/chicago-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 70%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .search-button {
+            width: 30%;
+            padding: 12px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .search-button:hover {
+            background-color: #27ae60;
+        }
+        
+        .search-results {
+            margin-top: 2rem;
+        }
+        
+        .search-results h2 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .result-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .result-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .result-card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .result-card .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .result-card .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .no-results h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .no-results p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .suggestions {
+            margin-top: 30px;
+        }
+        
+        .suggestions h4 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .suggestion-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .suggestion-list a {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .suggestion-list a:hover {
+            background-color: #bdc3c7;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .search-input, .search-button {
+                width: 100%;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Chicago Crypto ATMs</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/neighborhoods">Neighborhoods</a></li>
+                <li><a href="/cryptocurrencies">Cryptocurrencies</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Search Results</h1>
+        <p>Results for: "test"</p>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" name="q" class="search-input" placeholder="Enter location or cryptocurrency (e.g., XRP)..." value="test">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="search-results">
+            
+                <div class="no-results">
+                    <h3>No exact matches found for "test"</h3>
+                    <p>Try searching for a different term or browse our suggestions below.</p>
+                    
+                    <div class="suggestions">
+                        <h4>Popular Cryptocurrencies</h4>
+                        <div class="suggestion-list">
+                            <a href="/cryptocurrency/btc">Bitcoin (BTC)</a>
+                            <a href="/cryptocurrency/eth">Ethereum (ETH)</a>
+                            <a href="/cryptocurrency/usdt">Tether (USDT)</a>
+                            <a href="/cryptocurrency/xrp">XRP</a>
+                            <a href="/cryptocurrency/doge">Dogecoin (DOGE)</a>
+                        </div>
+                    </div>
+                    
+                    <div class="suggestions">
+                        <h4>Popular Neighborhoods</h4>
+                        <div class="suggestion-list">
+                            <a href="/neighborhood/loop">The Loop</a>
+                            <a href="/neighborhood/river-north">River North</a>
+                            <a href="/neighborhood/lincoln-park">Lincoln Park</a>
+                            <a href="/neighborhood/wicker-park">Wicker Park</a>
+                            <a href="/neighborhood/logan-square">Logan Square</a>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Chicago Crypto ATMs. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

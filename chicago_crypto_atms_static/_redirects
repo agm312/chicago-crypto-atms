@@ -1,0 +1,16 @@
+# Netlify redirects file for Chicago Crypto ATMs
+
+# Handle neighborhood pages without .html extension
+/neighborhood/:id  /neighborhood/:id.html  200
+
+# Handle cryptocurrency pages without .html extension
+/cryptocurrency/:id  /cryptocurrency/:id.html  200
+
+# Redirect /neighborhoods to the neighborhoods.html page
+/neighborhoods  /neighborhoods.html  200
+
+# Redirect /cryptocurrencies to the cryptocurrencies.html page
+/cryptocurrencies  /cryptocurrencies.html  200
+
+# Handle 404 errors by redirecting to the homepage
+/*  /index.html  404 

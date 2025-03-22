@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin (BTC) ATMs in Chicago</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #E84E3C;
+            --text-color: #333;
+            --border-color: #e5e7eb;
+            --background-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        /* Header Styles */
+        header {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/static/images/chicago-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-button {
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 2rem;
+            background: var(--background-gray);
+            overflow-x: auto;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .category-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* ATM Grid */
+        .atm-grid {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .atm-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .atm-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .atm-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .atm-details {
+            padding: 1rem;
+        }
+
+        .atm-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .atm-type {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating {
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+        }
+
+        .atm-address {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .atm-phone {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .visit-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Chicago Crypto ATMs</a>
+            <div class="nav-links">
+                <a href="/neighborhoods">Neighborhoods</a>
+                <a href="/cryptocurrencies">Cryptocurrencies</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Find Crypto ATMs in Chicago</h1>
+        <p>Discover top-rated cryptocurrency ATMs near you</p>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" name="q" class="search-input" placeholder="Enter location or cryptocurrency (e.g., XRP)...">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="categories">
+        
+            <a href="/neighborhood/loop" class="category-tag">The Loop</a>
+        
+            <a href="/neighborhood/river-north" class="category-tag">River North</a>
+        
+            <a href="/neighborhood/lincoln-park" class="category-tag">Lincoln Park</a>
+        
+            <a href="/neighborhood/wicker-park" class="category-tag">Wicker Park</a>
+        
+            <a href="/neighborhood/logan-square" class="category-tag">Logan Square</a>
+        
+            <a href="/neighborhood/west-loop" class="category-tag">West Loop</a>
+        
+            <a href="/neighborhood/south-loop" class="category-tag">South Loop</a>
+        
+            <a href="/neighborhood/gold-coast" class="category-tag">Gold Coast</a>
+        
+            <a href="/neighborhood/lakeview" class="category-tag">Lakeview</a>
+        
+            <a href="/neighborhood/uptown" class="category-tag">Uptown</a>
+        
+    </section>
+
+    <main class="atm-grid">
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/digital_exchange.jpg" alt="Digital Currency Exchange" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Digital Currency Exchange</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(234)</span>
+                </div>
+                <p class="atm-address">789 N Michigan Ave, Chicago, IL 60611</p>
+                <a href="/atm/digital_exchange" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/bitcoin_america.jpg" alt="Bitcoin of America ATM" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Bitcoin of America ATM</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(178)</span>
+                </div>
+                <p class="atm-address">987 W Belmont Ave, Chicago, IL 60657</p>
+                <a href="/atm/bitcoin_america" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="RockItCoin ATM - West Loop" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">RockItCoin ATM - West Loop</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(145)</span>
+                </div>
+                <p class="atm-address">150 N Halsted St, Chicago, IL 60661</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/seven_eleven.jpg" alt="Bitcoin ATM at 7-Eleven" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Bitcoin ATM at 7-Eleven</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(156)</span>
+                </div>
+                <p class="atm-address">123 State St, Chicago, IL 60601</p>
+                <a href="/atm/seven_eleven" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Bitcoin Depot ATM" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Bitcoin Depot ATM</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(145)</span>
+                </div>
+                <p class="atm-address">852 W Addison St, Chicago, IL 60613</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Bitcoin Depot - Fullerton Ave" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Bitcoin Depot - Fullerton Ave</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(124)</span>
+                </div>
+                <p class="atm-address">2400 N Halsted St, Chicago, IL 60614</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Bitcoin Depot - 24/7 Location" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Bitcoin Depot - 24/7 Location</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(115)</span>
+                </div>
+                <p class="atm-address">2610 N Milwaukee Ave, Chicago, IL 60647</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="RockItCoin ATM - Uptown" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">RockItCoin ATM - Uptown</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(109)</span>
+                </div>
+                <p class="atm-address">4520 N Broadway, Chicago, IL 60640</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Quick Crypto ATM" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Quick Crypto ATM</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(112)</span>
+                </div>
+                <p class="atm-address">321 N Clark St, Chicago, IL 60654</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Bitcoin Depot - West Loop" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Bitcoin Depot - West Loop</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(103)</span>
+                </div>
+                <p class="atm-address">925 W Randolph St, Chicago, IL 60607</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="CoinFlip Bitcoin ATM" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">CoinFlip Bitcoin ATM</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(123)</span>
+                </div>
+                <p class="atm-address">654 N Milwaukee Ave, Chicago, IL 60622</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Coinflip ATM - Lincoln Park" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Coinflip ATM - Lincoln Park</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(98)</span>
+                </div>
+                <p class="atm-address">2470 N Clark St, Chicago, IL 60614</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="CoinMe ATM - Roosevelt Rd" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">CoinMe ATM - Roosevelt Rd</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(96)</span>
+                </div>
+                <p class="atm-address">1167 S Roosevelt Rd, Chicago, IL 60605</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Bitcoin Depot - 24/7 Location" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Bitcoin Depot - 24/7 Location</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(95)</span>
+                </div>
+                <p class="atm-address">4800 N Broadway, Chicago, IL 60640</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Crypto Corner ATM" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Crypto Corner ATM</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(89)</span>
+                </div>
+                <p class="atm-address">456 N Wells St, Chicago, IL 60654</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="RockItCoin ATM - DePaul" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">RockItCoin ATM - DePaul</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(87)</span>
+                </div>
+                <p class="atm-address">2250 N Lincoln Ave, Chicago, IL 60614</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Coinflip ATM - Wilson Ave" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Coinflip ATM - Wilson Ave</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(87)</span>
+                </div>
+                <p class="atm-address">1130 W Wilson Ave, Chicago, IL 60640</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Coinhub ATM - Manhattan Mart" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Coinhub ATM - Manhattan Mart</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(84)</span>
+                </div>
+                <p class="atm-address">424 S Clark St, Chicago, IL 60605</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Cryptobase ATM - Logan Square" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Cryptobase ATM - Logan Square</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(82)</span>
+                </div>
+                <p class="atm-address">2501 N Milwaukee Ave, Chicago, IL 60647</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Coinhub ATM - Fulton Market" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Coinhub ATM - Fulton Market</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(78)</span>
+                </div>
+                <p class="atm-address">818 W Fulton Market, Chicago, IL 60607</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Coinflip ATM - Milwaukee Ave" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Coinflip ATM - Milwaukee Ave</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(76)</span>
+                </div>
+                <p class="atm-address">2759 N Milwaukee Ave, Chicago, IL 60647</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+        <article class="atm-card">
+            <img src="/static/images/locations/default.jpg" alt="Cryptobase ATM - 24/7 Location" class="atm-image">
+            <div class="atm-details">
+                <h2 class="atm-name">Cryptobase ATM - 24/7 Location</h2>
+                <div class="rating">
+                    ⭐⭐⭐⭐
+                    <span>(73)</span>
+                </div>
+                <p class="atm-address">725 S State St, Chicago, IL 60605</p>
+                <a href="/atm/default" class="visit-button">View Details</a>
+            </div>
+        </article>
+        
+    </main>
+</body>
+</html> 

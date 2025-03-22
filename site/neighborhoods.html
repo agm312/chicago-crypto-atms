@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Neighborhoods - Crypto ATMs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nj.css">
+    <script src="/js/js.js" defer></script>
+    <script src="/js/dom.js" defer></script>
+    <style>
+        :root {
+            --primary-color: #E84E3C;
+            --text-color: #333;
+            --border-color: #e5e7eb;
+            --background-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.5;
+            background-color: var(--background-gray);
+        }
+
+        header {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin: 2rem 0 1rem;
+            color: var(--primary-color);
+        }
+
+        .neighborhoods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .neighborhood-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .neighborhood-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .neighborhood-info {
+            padding: 1.5rem;
+        }
+
+        .neighborhood-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .atm-count {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .view-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Chicago Crypto ATMs</a>
+            <div class="nav-links">
+                <a href="/neighborhoods">Neighborhoods</a>
+                <a href="/cryptocurrencies">Cryptocurrencies</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Chicago Crypto ATM Locations</h1>
+        
+        <h2 class="section-title">Chicago Neighborhoods</h2>
+        <div class="neighborhoods-grid">
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">The Loop</h2>
+                    <p class="atm-count">8 ATMs available</p>
+                    <a href="/neighborhood/loop" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">River North</h2>
+                    <p class="atm-count">9 ATMs available</p>
+                    <a href="/neighborhood/river-north" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Lincoln Park</h2>
+                    <p class="atm-count">9 ATMs available</p>
+                    <a href="/neighborhood/lincoln-park" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Wicker Park</h2>
+                    <p class="atm-count">7 ATMs available</p>
+                    <a href="/neighborhood/wicker-park" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Logan Square</h2>
+                    <p class="atm-count">9 ATMs available</p>
+                    <a href="/neighborhood/logan-square" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">West Loop</h2>
+                    <p class="atm-count">8 ATMs available</p>
+                    <a href="/neighborhood/west-loop" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">South Loop</h2>
+                    <p class="atm-count">9 ATMs available</p>
+                    <a href="/neighborhood/south-loop" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Gold Coast</h2>
+                    <p class="atm-count">9 ATMs available</p>
+                    <a href="/neighborhood/gold-coast" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Lakeview</h2>
+                    <p class="atm-count">9 ATMs available</p>
+                    <a href="/neighborhood/lakeview" class="view-button">View ATMs</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Uptown</h2>
+                    <p class="atm-count">9 ATMs available</p>
+                    <a href="/neighborhood/uptown" class="view-button">View ATMs</a>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Chicago Suburbs</h2>
+        <div class="neighborhoods-grid">
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Evanston</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/evanston" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Naperville</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/naperville" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Schaumburg</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/schaumburg" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Aurora</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/aurora" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Joliet</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/joliet" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Waukegan</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/waukegan" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Arlington Heights</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/arlington-heights" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Cicero</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/cicero" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Oak Lawn</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/oak-lawn" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Skokie</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/skokie" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Des Plaines</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/des-plaines" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Mount Prospect</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/mount-prospect" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Palatine</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/palatine" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Orland Park</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/orland-park" class="view-button">View ATM</a>
+                </div>
+            </div>
+            
+            <div class="neighborhood-card">
+                <div class="neighborhood-info">
+                    <h2 class="neighborhood-name">Hoffman Estates</h2>
+                    <p class="atm-count">1 ATM available</p>
+                    <a href="/suburb/hoffman-estates" class="view-button">View ATM</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

@@ -83,4 +83,4 @@ A web application that helps users find cryptocurrency ATMs in Chicago neighborh
 
 ## License
 
-MIT 
+MIT
